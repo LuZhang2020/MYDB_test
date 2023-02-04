@@ -25,12 +25,19 @@ public class Launcher {
 	public static final long GB = 1 << 30;
 
     public static void main(String[] args) throws ParseException {
+
+//        args = "-create /tmp/mydb".split(" ");
+//        args = "-open /tmp/mydb".split(" ");
+
         Options options = new Options();
         options.addOption("open", true, "-open DBPath");
         options.addOption("create", true, "-create DBPath");
         options.addOption("mem", true, "-mem 64MB");
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd = parser.parse(options,args);
+
+        System.out.println(cmd);
+
 
         if(cmd.hasOption("open")) {
             openDB(cmd.getOptionValue("open"), parseMem(cmd.getOptionValue("mem")));
