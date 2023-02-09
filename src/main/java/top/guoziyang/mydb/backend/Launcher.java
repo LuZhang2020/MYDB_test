@@ -28,6 +28,8 @@ public class Launcher {
 
 //        args = "-create /tmp/mydb".split(" ");
 //        args = "-open /tmp/mydb".split(" ");
+//        asdf
+
 
         Options options = new Options();
         options.addOption("open", true, "-open DBPath");
@@ -36,7 +38,7 @@ public class Launcher {
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd = parser.parse(options,args);
 
-        System.out.println(cmd);
+        System.out.println(cmd.getOptionValue("open"));
 
 
         if(cmd.hasOption("open")) {
